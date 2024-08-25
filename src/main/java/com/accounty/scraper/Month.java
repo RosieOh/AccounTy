@@ -21,4 +21,15 @@ public enum Month {
 
     private String month;
     private int monthToNumber;
+
+    // 문자열 월을 숫자형 월로 바꿔주는 메소드
+    public static int stringToMonth(String str) {
+        for (Month value : Month.values()) {
+            if (str.equals(value.month)) {
+                return value.monthToNumber;
+            }
+        }
+        return -1;
+    }
+
 }
