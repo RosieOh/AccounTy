@@ -1,6 +1,7 @@
 package com.accounty.dividend.domain;
 
 import com.accounty.company.domain.Company;
+import com.accounty.dividend.dto.JoinDividendDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -27,4 +28,15 @@ public class Dividend {
 
     @Column(nullable = false)
     private String dividend;
+
+    @Column
+    private LocalDateTime delDate;
+
+    // Dividend -> JoinDividendDTO.Response
+    public JoinDividendDTO.Response toJoinDividendDTO() {
+        return JoinDividendDTO.Response.builder()
+                .dividend(dividend)
+                .date(date)
+                .build();
+    }
 }
