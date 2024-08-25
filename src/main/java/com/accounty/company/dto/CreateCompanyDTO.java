@@ -2,7 +2,7 @@ package com.accounty.company.dto;
 
 import lombok.*;
 
-public class CompanyDTO {
+public class CreateCompanyDTO {
     @Getter
     @Setter // 테스트용
     @AllArgsConstructor
